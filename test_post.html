@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+    
+  <title>Intro to recurrent neural networks</title>
+    
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+    
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']]},
+      "HTML-CSS": { 
+        linebreaks: { automatic: true, width: "90% container" },
+        scale: 100
+      },
+      SVG: { linebreaks: { automatic: true } }
+    });
+  </script>
+    
+</head>
+    
+<body>
+  <div class="container">
+      <div class="post-content">
+        <h1>Intro to recurrent neural networks</h1>
+<p>Recurrent neural networks (RNNs) are useful models in both neuroscience and machine learning.</p>
+<h2>Architecture</h2>
+<p>RNNs consist of a collection of nodes <span id="math-equation">\(1, \dots, N\)</span>, connected via a weight matrix <span id="math-equation">\(W \in \mathbb{R}^{N \times N}\)</span>.
+The hidden state of individual neurons is <span id="math-equation">\(\mathbf{h}_t\)</span> and their activations <span id="math-equation">\(\mathbf{r}_t = \phi(\mathbf{h}_t)\)</span>, where <span id="math-equation">\(\phi\)</span> is a nonlinearity such as a sigmoid or ReLU. Sometimes biases <span id="math-equation">\(\mathbf{b} \in \mathbb{R}^N\)</span> are also included.</p>
+<p><img alt="Recurrent neural network diagram" src="rnn.png" /></p>
+<h2>Dynamics</h2>
+<p>A typical form for the dynamics of the neurons in the RNN is</p>
+<p>\[\begin{split}
+    \mathbf{h}_t & = \mathbf{h}_{t-1} + W\mathbf{r}_{t-1} + B\mathbf{u}_t, \\
+    \mathbf{r}_t & = \phi(\mathbf{h}_t) = \frac{1}{1 + \exp(-\mathbf{h}_t)}, \\
+\end{split}\]</p>
+<p>where <span id="math-equation">\(\phi\)</span> is applied element-wise, <span id="math-equation">\(\mathbf{u}_t\)</span> are external inputs and <span id="math-equation">\(B: \mathbb{R}^{N_u} \to \mathbb{R}^N\)</span>.</p>
+<h2>Additional resources</h2>
+<p>You can read more about RNNs on the <a href="https://en.wikipedia.org/wiki/Recurrent_neural_network">Wikipedia page</a>.</p>
+      </div>
+  </div>
+</body>
+    
+</html>
