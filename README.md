@@ -4,9 +4,9 @@ A very lightweight python app for converting Markdown with basic LaTeX (`$x = 5$
 
 ## Installation
 
-```$ git clone https://github.com/neurotaxis/mark-tex.git```
-```$ cd mark-tex```
-```$ pip install markdown```
+```$ git clone https://github.com/neurotaxis/mark-tex.git
+$ cd mark-tex
+$ pip install markdown```
 
 ## Usage
 
